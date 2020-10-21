@@ -32,25 +32,25 @@ class Network():
             
     def travelAction(self, timeStep):
         #Change Position only every 3 steps -> without any reasoning so far
-        if(timeStep%3 == 0 and daytime == False):
+        if(timeStep%3 == 0 and self.daytime == False):
             #sendPeopleHome
             for node in self.nodes:
-                for i, traveller in node.people:
+                for idx, traveller in enumerate(node.people):
                     if(traveller.homeNode != node.name):
                         #add traveller to HomeNode
-                        self.nodes[traveller.homeNode].append(traveller)
+                        self.nodes[traveller.homeNode].people.append(traveller)
                         #rm traveller from WorkNode
-                        del(node.people[i])   
-            daytime = True
-        elif(timeStep%3 == 0 and daytime == True):
+                        del(node.people[idx])   
+            self.daytime = True
+        elif(timeStep%3 == 0 and self.daytime == True):
             #sendPeopleTo Work
-           for node in self.nodes:
-                for i, traveller in node.people:
+            for node in self.nodes:
+                for idx, traveller in enumerate(node.people):
                     if(traveller.workNode != node.name):
                         #add traveller to HomeNode
-                        self.nodes[traveller.workNode].append(traveller)
+                        self.nodes[traveller.workNode].people.append(traveller)
                         #rm traveller from WorkNode
-                        del(node.people[i])             
-            daytime = False
+                        del(node.people[idx])             
+            self.daytime = False
                 
             

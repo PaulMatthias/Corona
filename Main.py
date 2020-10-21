@@ -14,7 +14,7 @@ def main():
     """
     
     #Steering Variables, get them from Input data later
-    numberOfNodes = 50
+    numberOfNodes = 5
     populationMeridian = 100
     betaMeridian = 0.8
     gammaMeridian = 0.1
@@ -40,7 +40,7 @@ def main():
     #Time Evolution of the spreading f the sickness based on discretized SIR Model
     for t in range(0,tmax):
         network.infectionStep()
-        network.travelAction()
+        network.travelAction(t)
 
     network.plotSIRDiagramm()
 
