@@ -11,11 +11,18 @@ class Node():
     """
     This class describes a node in the network
     """
-    def __init__(self, population, beta, gamma):
+    def __init__(self, name, population, beta, gamma):
+        self.name = name
         self.population = population        
         self.people = []
         self.SIR = SIR(beta, gamma)
-        #TODO
+        self.SIRTimeEvolution = {"SData":[], "IData":[], "RData":[]}
+
+    
+    def saveData(self):
+        self.SIRTimeEvolution["SData"].append(self.SIR.S)
+        self.SIRTimeEvolution["IData"].append(self.SIR.I)
+        self.SIRTimeEvolution["RData"].append(self.SIR.R)
     
     def getTotalSIRNumbers(self):
         S = I = R = 0
