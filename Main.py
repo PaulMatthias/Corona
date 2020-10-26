@@ -7,6 +7,7 @@ from Network import Network
 from SIR import SIR
 from People import People
 from Node import Node
+from Importer import InputData
 
 def main():
     """
@@ -20,19 +21,12 @@ def main():
     gammaMeridian = 0.1
     tmax = 50
     
+    #GET INPUTDATA
+    inputData = InputData()
     
     #SETUP THE ENTIRE NETWORK
-    network = Network()
-    for i in range(0,numberOfNodes):
-        network.nodes.append(Node(i, populationMeridian, betaMeridian, gammaMeridian))
-        for j in range(0,network.nodes[i].population):
-            if random.uniform(0,1) < 0.7:
-                #People working in their home node
-                network.nodes[i].people.append(People(j, i, i, "S"))
-            else:
-                #choose Random Work Node at this point
-                network.nodes[i].people.append(People(j, i, int(random.uniform(0,1) * numberOfNodes-1), "S"))
-                
+    network = Network(inputData)
+
     #Infect Patients zero
     for node in network.nodes:
         node.people[0].sicknessStatus = "I"
