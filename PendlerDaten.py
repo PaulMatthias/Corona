@@ -5,7 +5,6 @@ listOfBundeslaender = ["Schleswig-Holstein", "Brandenburg", "Mecklenburg-Vorpomm
     "Baden-Württemberg", "Bayern", "Saarland", "Thüringen", "Niedersachsen", "Übrige Kreise (Regierungsbezirk)", "Übrige Regierungsbezirke (Bundesland)", "Auspendler in das Bundesgebiet",\
         "Auspendler insgesamt"]
 
-
 for i in range(1,17):
     if i < 10:
         number = '0' + str(i)
@@ -34,7 +33,7 @@ for i in range(1,17):
   
     df = df.drop_duplicates()
   
-    df.to_excel("testTransferOf_"+str(i)+".xls")
+    df.to_excel("PendlerDaten/CleanDataOf_"+str(i)+".xls")
         
     dfList.append(df)
 
