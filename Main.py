@@ -22,19 +22,26 @@ def main():
     tmax = 50
     
     #GET INPUTDATA
+    print("Getting input data...")
     inputData = InputData()
+    print("...done")
     
     #SETUP THE ENTIRE NETWORK
+    print("Setting up Network ...")
     network = Network(inputData)
+    print("...done")
 
     #Infect Patients zero
     for node in network.nodes:
         node.people[0].sicknessStatus = "I"
 
     #Time Evolution of the spreading f the sickness based on discretized SIR Model
+    print("Start spreading...")
     for t in range(0,tmax):
         network.infectionStep()
         network.travelAction(t)
+        if(t%50 == 0):
+            print("Timestep " + str(t) + "of maximum of " + str(tmax))
 
     network.plotSIRDiagramm()
 
