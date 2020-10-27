@@ -24,6 +24,7 @@ class Network():
                 sanityCheck = dfLand.homeNode.isin(inputData.dfTotalPeople.Kreis)
                 for ind, sane in enumerate(sanityCheck):
                     if not sane:
+                        print("Sanity Check fails for ...")
                         print(dfLand.homeNode[ind])
                 exit(-1)
                 

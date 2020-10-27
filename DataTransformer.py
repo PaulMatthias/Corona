@@ -23,6 +23,8 @@ for i in range(1,17):
         else:
             df.at[ind, 'homeNode'] = homeNode
 
+    df.homeNode = df.homeNode.replace("\,.*", "",regex=True)
+    
     #drop everything with nan
     df = df.dropna()
     #rm travell sums to other Bundeslaender
@@ -30,6 +32,7 @@ for i in range(1,17):
     #drop duplicate entries (dont know the reason, but there are some in the excel sheets)
     df["workNode"] = df["workNode"].str.replace("Reg.-Bez.", "")
     df["workNode"] = df["workNode"].str.replace("Statistische Region", "")
+    df.workNode = df.workNode.replace("\,.*","",regex=True)
   
     df = df.drop_duplicates()
   
