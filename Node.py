@@ -1,7 +1,6 @@
 import numpy as np
 import random
 import pandas as pd
-import seaborn as sn
 from SIR import SIR
 from People import People
 

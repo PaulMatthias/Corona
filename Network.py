@@ -19,6 +19,15 @@ class Network():
 
             #For every node define certain number of people with the corresponding working Node
             for dfLand in inputData.dfListOfBundesland:
+                
+                #Sanity check if every homeNode and workNode are listed in dfTotalPeople["Kreis"]
+                sanityCheck = dfLand.homeNode.isin(inputData.dfTotalPeople.Kreis)
+                for ind, sane in enumerate(sanityCheck):
+                    if not sane:
+                        print(dfLand.homeNode[ind])
+                exit(-1)
+                
+                
                 dfReduced = dfLand.loc[dfLand['homeNode'] == inputData.dfTotalPeople["Kreis"][i]]
                 #check if there is any traveller data
                 if dfReduced.empty:
