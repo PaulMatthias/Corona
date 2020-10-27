@@ -26,9 +26,9 @@ class Network():
                     if not sane:
                         print("Sanity Check fails for ...")
                         print(dfLand.homeNode[ind])
-                exit(-1)
                 
                 
+                #TODO FIXME...
                 dfReduced = dfLand.loc[dfLand['homeNode'] == inputData.dfTotalPeople["Kreis"][i]]
                 #check if there is any traveller data
                 if dfReduced.empty:

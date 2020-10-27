@@ -21,4 +21,8 @@ class InputData():
         for i in range(1,17):
             df=pd.read_excel('PendlerDaten/CleanDataOf_' + str(i) + '.xls')
             self.dfListOfBundesland.append(df)
+            
+        self.dfTotalPeople.to_excel("testData.xls")
+        
+#blub = InputData()
 

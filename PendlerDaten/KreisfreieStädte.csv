@@ -1,111 +1,111 @@
 Kreis,Einwohner,Dichte
-Aachen ,248960,1548
-Amberg ,42207,842
-Ansbach ,41798,418
-Aschaffenburg ,71002,1137
-Augsburg ,296582,2020
-Baden-Baden ,55185,394
-Bamberg ,77373,1416
-Bayreuth ,74783,1117
-Berlin ,3669491,3948
-Bielefeld ,334195,1291
-Bochum ,365587,2510
-Bonn ,329673,2337
-Bottrop ,117565,1168
-Brandenburg an der Havel ,72184,314
-Braunschweig ,249406,1298
-Bremen ,567559,1743
-Bremerhaven ,113643,1211
-Chemnitz ,246334,1114
-Coburg ,41072,851
-Cottbus ,99678,604
-Darmstadt ,159878,1310
-Delmenhorst ,77559,1244
-Dessau-Roßlau ,80103,327
-Dortmund ,588250,2096
-Dresden ,556780,1695
-Duisburg ,498686,2142
-Düsseldorf ,621877,2860
-Eisenach ,42250,406
-Emden ,49913,444
-Erfurt ,213981,793
-Erlangen ,112528,1462
-Essen ,582760,2771
-Flensburg ,90164,1589
-Frankenthal  ,48762,1114
-Frankfurt  ,57751,391
-Frankfurt am Main ,763380,3074
-Freiburg im Breisgau ,231195,1511
-Fürth ,128497,2028
-Gelsenkirchen ,259645,2474
-Gera ,93125,612
-Göttingen ,118911,1017
-Hagen ,188686,1176
-Halle  ,238762,1768
-Hamburg ,1841179,2515
-Hamm ,179916,795
-Hannover ,536925,2630
-Heidelberg ,161485,1484
-Heilbronn ,126592,1267
-Herne ,156449,3043
-Hof ,45825,790
-Ingolstadt ,137392,1030
-Jena ,111343,970
-Kaiserslautern ,100030,716
-Karlsruhe ,312060,1799
-Kassel ,202137,1893
-Kaufbeuren ,44398,1109
-Kempten  ,69151,1093
-Kiel ,246794,2080
-Koblenz ,114052,1085
-Köln ,1087863,2686
-Krefeld ,227417,1651
-Landau in der Pfalz ,46881,565
-Landshut ,73411,1115
-Leipzig ,593145,1992
-Leverkusen ,163729,2076
-Lübeck ,216530,1011
-Ludwigshafen am Rhein ,172253,2221
-Magdeburg ,237565,1182
-Mainz ,218578,2236
-Mannheim ,310658,2143
-Memmingen ,44100,629
-Mönchengladbach ,261034,1531
-Mülheim an der Ruhr ,170632,1869
-München ,1484226,4777
-Münster ,315293,1040
-Neumünster ,80196,1120
-Neustadt an der Weinstraße ,53264,455
-Nürnberg ,518370,2781
-Oberhausen ,210764,2734
-Offenbach am Main ,130280,2902
-Oldenburg ,169077,1642
-Osnabrück ,165251,1379
-Passau ,52803,759
-Pforzheim ,125957,1285
-Pirmasens ,40231,656
-Potsdam ,180334,956
-Regensburg ,153094,1897
-Remscheid ,111338,1494
-Rosenheim ,63551,1707
-Rostock ,209191,1154
-Salzgitter ,104291,466
-Schwabach ,40981,1004
-Schweinfurt ,53426,1497
-Schwerin ,95653,733
-Solingen ,159245,1778
-Speyer ,50561,1187
-Straubing ,47791,707
-Stuttgart ,635911,3067
-Suhl ,36789,260
-Trier ,111528,952
-Ulm ,126790,1068
-Weiden in der Oberpfalz ,42743,606
-Weimar ,65228,772
-Wiesbaden ,278474,1366
-Wilhelmshaven ,76089,711
-Wolfsburg ,124371,609
-Worms ,83542,768
-Wuppertal ,355100,2109
-Würzburg ,127934,1460
-Zweibrücken ,34193,484
+Aachen,248960,1548
+Amberg,42207,842
+Ansbach,41798,418
+Aschaffenburg,71002,1137
+Augsburg,296582,2020
+Baden-Baden,55185,394
+Bamberg,77373,1416
+Bayreuth,74783,1117
+Berlin,3669491,3948
+Bielefeld,334195,1291
+Bochum,365587,2510
+Bonn,329673,2337
+Bottrop,117565,1168
+Brandenburg an der Havel,72184,314
+Braunschweig,249406,1298
+Bremen,567559,1743
+Bremerhaven,113643,1211
+Chemnitz,246334,1114
+Coburg,41072,851
+Cottbus,99678,604
+Darmstadt,159878,1310
+Delmenhorst,77559,1244
+Dessau-Roßlau,80103,327
+Dortmund,588250,2096
+Dresden,556780,1695
+Duisburg,498686,2142
+Düsseldorf,621877,2860
+Eisenach,42250,406
+Emden,49913,444
+Erfurt,213981,793
+Erlangen,112528,1462
+Essen,582760,2771
+Flensburg,90164,1589
+Frankenthal,48762,1114
+Frankfurt,57751,391
+Frankfurt am Main,763380,3074
+Freiburg im Breisgau,231195,1511
+Fürth,128497,2028
+Gelsenkirchen,259645,2474
+Gera,93125,612
+Göttingen,118911,1017
+Hagen,188686,1176
+Halle,238762,1768
+Hamburg,1841179,2515
+Hamm,179916,795
+Hannover,536925,2630
+Heidelberg,161485,1484
+Heilbronn,126592,1267
+Herne,156449,3043
+Hof,45825,790
+Ingolstadt,137392,1030
+Jena,111343,970
+Kaiserslautern,100030,716
+Karlsruhe,312060,1799
+Kassel,202137,1893
+Kaufbeuren,44398,1109
+Kempten,69151,1093
+Kiel,246794,2080
+Koblenz,114052,1085
+Köln,1087863,2686
+Krefeld,227417,1651
+Landau in der Pfalz,46881,565
+Landshut,73411,1115
+Leipzig,593145,1992
+Leverkusen,163729,2076
+Lübeck,216530,1011
+Ludwigshafen am Rhein,172253,2221
+Magdeburg,237565,1182
+Mainz,218578,2236
+Mannheim,310658,2143
+Memmingen,44100,629
+Mönchengladbach,261034,1531
+Mülheim an der Ruhr,170632,1869
+München,1484226,4777
+Münster,315293,1040
+Neumünster,80196,1120
+Neustadt an der Weinstraße,53264,455
+Nürnberg,518370,2781
+Oberhausen,210764,2734
+Offenbach am Main,130280,2902
+Oldenburg,169077,1642
+Osnabrück,165251,1379
+Passau,52803,759
+Pforzheim,125957,1285
+Pirmasens,40231,656
+Potsdam,180334,956
+Regensburg,153094,1897
+Remscheid,111338,1494
+Rosenheim,63551,1707
+Rostock,209191,1154
+Salzgitter,104291,466
+Schwabach,40981,1004
+Schweinfurt,53426,1497
+Schwerin,95653,733
+Solingen,159245,1778
+Speyer,50561,1187
+Straubing,47791,707
+Stuttgart,635911,3067
+Suhl,36789,260
+Trier,111528,952
+Ulm,126790,1068
+Weiden in der Oberpfalz,42743,606
+Weimar,65228,772
+Wiesbaden,278474,1366
+Wilhelmshaven,76089,711
+Wolfsburg,124371,609
+Worms,83542,768
+Wuppertal,355100,2109
+Würzburg,127934,1460
+Zweibrücken,34193,484
