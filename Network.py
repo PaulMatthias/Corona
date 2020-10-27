@@ -20,20 +20,33 @@ class Network():
             #For every node define certain number of people with the corresponding working Node
             for dfLand in inputData.dfListOfBundesland:
                 dfReduced = dfLand.loc[dfLand['homeNode'] == inputData.dfTotalPeople["Kreis"][i]]
+                #check if there is any traveller data
+                if dfReduced.empty:
+                    print("Could not find traveller data for " + inputData.dfTotalPeople["Kreis"][i])
+                    
                 #Create List of List of workers
                 workers = [self.createPeople(inputData.dfTotalPeople["Kreis"][i], workNode, numberOfPeople) for workNode, numberOfPeople in zip(dfReduced["workNode"], dfReduced["numberOfTravellers"])]
                 #add worker to people list of the actual node
-                for worker in workers:
-                    self.nodes[-1].people.append(worker)
-            
-            #Rest of people have the same home and working node
+                for workerList in workers:
+                    if not isinstance(workerList[0], People):
+                        print("Wrong Type in workerList " + str(type(workerList[0])) + " in Setup of Network...")
+                        continue
+                    
+                    self.nodes[-1].people.extend(workerList)
+                    
+                    if not isinstance(self.nodes[-1].people[0], People):
+                        print("Someting wrong with extending people in the node..." + str(self.nodes[-1].name))
+                        
             #Sanity check if number  of travellers is bigger than the total people number
             if  inputData.dfTotalPeople["Einwohner"][i] < len(self.nodes[-1].people):
                 print("Number of people in " + inputData.dfTotalPeople["Kreis"][i] + " smaller than the number of travellers... Exiting now")
                 exit(-1)
                 
+            #Rest of people have the same home and working node
             homeStayer = [self.createPeople(inputData.dfTotalPeople["Kreis"][i], inputData.dfTotalPeople["Kreis"][i], int(inputData.dfTotalPeople["Einwohner"][i] - len(self.nodes[-1].people)))]
-            self.nodes[-1].people.append(homeStayer)
+            self.nodes[-1].people.extend(homeStayer[0])
+            if not isinstance(self.nodes[-1].people[0], People):
+                print("Someting wrong with extending people in the node with homestayers..." + str(self.nodes[-1].name))
 
                     
     
@@ -71,6 +84,8 @@ class Network():
             plt.clf()
             
     def travelAction(self, timeStep):
+        #FIXME homeNode and workNode are not ints anymore -> have to be looked up
+        
         #Change Position only every 3 steps -> without any reasoning so far
         if(timeStep%3 == 0 and self.daytime == False):
             #sendPeopleHome

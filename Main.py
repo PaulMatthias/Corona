@@ -15,10 +15,7 @@ def main():
     """
     
     #Steering Variables, get them from Input data later
-    numberOfNodes = 5
-    populationMeridian = 100
     betaMeridian = 0.8
-    gammaMeridian = 0.1
     tmax = 50
     
     #GET INPUTDATA
@@ -38,10 +35,12 @@ def main():
     #Time Evolution of the spreading f the sickness based on discretized SIR Model
     print("Start spreading...")
     for t in range(0,tmax):
+        #TODO make infection multithreaded for siginficant speed up
         network.infectionStep()
+        
         network.travelAction(t)
         if(t%50 == 0):
-            print("Timestep " + str(t) + "of maximum of " + str(tmax))
+            print("Timestep " + str(t) + " of maximum of " + str(tmax))
 
     network.plotSIRDiagramm()
 
