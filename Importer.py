@@ -16,6 +16,10 @@ class InputData():
             
         dfKreisfreieStaedte = pd.read_csv("PendlerDaten/KreisfreieStädte.csv")#.drop(['Unnamed 0'],axis=1
 
+        for val in dfKreisfreieStaedte.Kreis.values:
+            if val in dfKreise.Kreis.values:
+                dfKreisfreieStaedte[dfKreisfreieStaedte.Kreis == val] = dfKreisfreieStaedte[dfKreisfreieStaedte.Kreis == val].replace(val, val + " Stadt")
+
         self.dfTotalPeople = pd.concat([dfKreise, dfKreisfreieStaedte], ignore_index=True)
 
         self.dfListOfBundesland = []

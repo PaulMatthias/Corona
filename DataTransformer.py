@@ -32,6 +32,7 @@ for i in range(1,17):
     #drop duplicate entries (dont know the reason, but there are some in the excel sheets)
     df["workNode"] = df["workNode"].str.replace("Reg.-Bez.", "")
     df["workNode"] = df["workNode"].str.replace("Statistische Region", "")
+    df.workNode = df.workNode.replace("\, Stadt"," Stadt",regex=True)
     df.workNode = df.workNode.replace("\,.*","",regex=True)
   
     df = df.drop_duplicates()
