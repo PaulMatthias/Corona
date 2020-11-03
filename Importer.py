@@ -5,17 +5,19 @@ class InputData():
     Data class which reads and stores all necessary input
     """
     def __init__(self):
-        dfKreise = pd.read_csv("PendlerDaten/EinwohnerProKreis.csv")
+        dfKreise = pd.read_csv("PendlerDaten/EinwohnerProKreis.csv") #.drop(['Unnamed 0'],axis=1)
         dfKreise.Kreis = dfKreise.Kreis.replace("\[.*\]","",regex=True)
         
         series = dfKreise.Kreis.str.contains('\, Städteregion')
         for i in range(0, len(series)):
             if series[i]:
-                dfKreise.Kreis[i] = dfKreise.Kreis[i].split(",")[1] + " " + dfKreise.Kreis[i].split(",")[0] 
+                value = dfKreise.Kreis[i].split(",")[1].lstrip() + " " + dfKreise.Kreis[i].split(",")[0] 
+                dfKreise.Kreis.at[i] = value
             
-        dfKreisfreieStaedte = pd.read_csv("PendlerDaten/KreisfreieStädte.csv")
-        self.dfTotalPeople = pd.concat([dfKreise, dfKreisfreieStaedte])
-        
+        dfKreisfreieStaedte = pd.read_csv("PendlerDaten/KreisfreieStädte.csv")#.drop(['Unnamed 0'],axis=1
+
+        self.dfTotalPeople = pd.concat([dfKreise, dfKreisfreieStaedte], ignore_index=True)
+
         self.dfListOfBundesland = []
 
         for i in range(1,17):
@@ -24,5 +26,3 @@ class InputData():
             
         self.dfTotalPeople.to_excel("testData.xls")
         
-#blub = InputData()
-

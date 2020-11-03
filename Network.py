@@ -19,21 +19,15 @@ class Network():
 
             #For every node define certain number of people with the corresponding working Node
             for dfLand in inputData.dfListOfBundesland:
-                
-                #Sanity check if every homeNode and workNode are listed in dfTotalPeople["Kreis"]
-                sanityCheck = dfLand.homeNode.isin(inputData.dfTotalPeople.Kreis)
-                for ind, sane in enumerate(sanityCheck):
-                    if not sane:
-                        print("Sanity Check fails for ...")
-                        print(dfLand.homeNode[ind])
-                
-                
+                                
                 #TODO FIXME...
-                dfReduced = dfLand.loc[dfLand['homeNode'] == inputData.dfTotalPeople["Kreis"][i]]
-                #check if there is any traveller data
+                dfReduced = dfLand.loc[dfLand['homeNode'].values == inputData.dfTotalPeople["Kreis"][i]]
+
+                #check if there is any traveller data, else continue
                 if dfReduced.empty:
-                    print("Could not find traveller data for " + inputData.dfTotalPeople["Kreis"][i])
-                    
+                    #print("Could not find traveller data for " + inputData.dfTotalPeople["Kreis"][i])
+                    continue
+                
                 #Create List of List of workers
                 workers = [self.createPeople(inputData.dfTotalPeople["Kreis"][i], workNode, numberOfPeople) for workNode, numberOfPeople in zip(dfReduced["workNode"], dfReduced["numberOfTravellers"])]
                 #add worker to people list of the actual node
@@ -49,7 +43,7 @@ class Network():
                         
             #Sanity check if number  of travellers is bigger than the total people number
             if  inputData.dfTotalPeople["Einwohner"][i] < len(self.nodes[-1].people):
-                print("Number of people in " + inputData.dfTotalPeople["Kreis"][i] + " smaller than the number of travellers... Exiting now")
+                print("Number of people " + str(inputData.dfTotalPeople["Einwohner"][i]) +" in " + inputData.dfTotalPeople["Kreis"][i] + " smaller than the number of travellers " + str(len(self.nodes[-1].people)) + "... Exiting now")
                 exit(-1)
                 
             #Rest of people have the same home and working node
