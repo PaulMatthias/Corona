@@ -20,7 +20,6 @@ class Network():
             #For every node define certain number of people with the corresponding working Node
             for dfLand in inputData.dfListOfBundesland:
                                 
-                #TODO FIXME...
                 dfReduced = dfLand.loc[dfLand['homeNode'].values == inputData.dfTotalPeople["Kreis"][i]]
 
                 #check if there is any traveller data, else continue
@@ -35,7 +34,7 @@ class Network():
                     if not isinstance(workerList[0], People):
                         print("Wrong Type in workerList " + str(type(workerList[0])) + " in Setup of Network...")
                         continue
-                    
+
                     self.nodes[-1].people.extend(workerList)
                     
                     if not isinstance(self.nodes[-1].people[0], People):

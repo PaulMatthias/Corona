@@ -13,14 +13,16 @@ class InputData():
             if series[i]:
                 value = dfKreise.Kreis[i].split(",")[1].lstrip() + " " + dfKreise.Kreis[i].split(",")[0] 
                 dfKreise.Kreis.at[i] = value
-            
+
         dfKreisfreieStaedte = pd.read_csv("PendlerDaten/KreisfreieStädte.csv")#.drop(['Unnamed 0'],axis=1
 
         for val in dfKreisfreieStaedte.Kreis.values:
             if val in dfKreise.Kreis.values:
                 dfKreisfreieStaedte[dfKreisfreieStaedte.Kreis == val] = dfKreisfreieStaedte[dfKreisfreieStaedte.Kreis == val].replace(val, val + " Stadt")
-
+                        
         self.dfTotalPeople = pd.concat([dfKreise, dfKreisfreieStaedte], ignore_index=True)
+
+        self.dfTotalPeople.to_excel("testData.xls")
 
         self.dfListOfBundesland = []
 
@@ -28,5 +30,4 @@ class InputData():
             df=pd.read_excel('PendlerDaten/CleanDataOf_' + str(i) + '.xls')
             self.dfListOfBundesland.append(df)
             
-        self.dfTotalPeople.to_excel("testData.xls")
         

@@ -23,7 +23,6 @@ for i in range(1,17):
         else:
             df.at[ind, 'homeNode'] = homeNode
 
-    df.homeNode = df.homeNode.replace("\,.*", "",regex=True)
     
     #drop everything with nan
     df = df.dropna()
@@ -33,7 +32,13 @@ for i in range(1,17):
     df["workNode"] = df["workNode"].str.replace("Reg.-Bez.", "")
     df["workNode"] = df["workNode"].str.replace("Statistische Region", "")
     df.workNode = df.workNode.replace("\, Stadt"," Stadt",regex=True)
+    df.workNode = df.workNode.replace("\, Landeshauptstadt"," Stadt",regex=True)    
     df.workNode = df.workNode.replace("\,.*","",regex=True)
+
+    df.homeNode = df.homeNode.replace("\, Stadt"," Stadt",regex=True)
+    df.homeNode = df.homeNode.replace("\, Landeshauptstadt"," Stadt",regex=True)    
+    df.homeNode = df.homeNode.replace("\,.*", "",regex=True)
+    
   
     df = df.drop_duplicates()
   
